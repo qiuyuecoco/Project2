@@ -1,2 +1,9 @@
 body {
   font-family: 'Raleway', sans-serif; }
+
+nav {
+  border-radius: 8px;
+  border: 1px solid #dadfea; }
+
+.listContainer {
+  background-color: tan; }

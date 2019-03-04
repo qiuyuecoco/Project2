@@ -1,54 +1,26 @@
-//Add List Button
-listNum = 0;
-itemNum = 0;
-
-function addList(value, event) {
-    //attempt to create dynamic name to identify & target element
-    // const message = $(`#${inputId}`).val();
-    switch (event.which) {
-        case 13:
-            listNum++;
-            $("#list").append("git<div id='list" + listNum + "'>" +
-                value +
-                "<i class='fas fa-trash' onclick='deleteList(" + listNum + ")'></i>"+
-                "<input type='text' placeholder='add item' onkeyup='additem(" + listNum +", this.value, event)'>"+
-                "<span contenteditable='true'> ${listInput} </span>"+
-                "</div>"+
-                ""
-            );
-
-            $("#listInput").val("");
-            break;
-    }
+//Add List w/ Item Input
+function addList(event) {
     let listInput = $(".listInput").val();
     if (listInput != "") {
         $("#list").append
             (`<div class="listContainer">
                 <div class='listMain'>
                     <input id="listCheckbox" type="checkbox" class="markCompleted">
-                    <i onclick = 'deleteList(this)' class='fas fa-trash'></i>
+                    <i onclick = 'deleteList(this)' class='fas fa-trash-alt'></i>
                     <span contenteditable='true'> ${listInput} </span>
                 </div>
-                <div id="list">
-                    <div class="row"></div>
-                </div>
-            </div>
-            <div class="itemContainer">
                 <div id="itemMain">
                     <input type="text" class="itemInput" onkeyup="itemCheck(event)"/>
                     <button onclick="addItem(this)">Add Item</button>
-                    
-                    <div id="item">
-                        <div class="row"></div>
-                    </div>
+                    <div class="item"></div>
                 </div>
-            </div>
+            </div>            
             `);
         $(".listInput").val("");
     }
     $(".listInput").focus();
 }
-
+//add List with Enter Key
 function listCheck(event) {
     switch (event.which) {
         case 13:
@@ -56,13 +28,18 @@ function listCheck(event) {
             break;
     }
 }
-//fadeOut is broken
+//delete List with trash icon
 function deleteList(element) {
+    $(element).parent().parent().fadeOut("slow", function () {
+        $(element).parent().parent().remove();
+    });
+}
+//delete Item with icon
+function deleteItem(element) {
     console.log(element);
-    // $(element).fadeOut("slow", function () {
+    $(element).parent().fadeOut( "slow", function() {
         $(element).parent().remove();
-
-    // });
+    });
 }
 
 //hide ITEM until there is an available LIST
@@ -75,28 +52,30 @@ function deleteList(element) {
 // }
 
 
-//Add Item Button
-function addItem() {
+//Add Item content into span with delete icon & checkbox
+function addItem(element) {
     let itemInput = $(".itemInput").val();
+    console.log(itemInput);
     if (itemInput != "") {
-        $("#item").append
-        (`<div class="itemContainer">
-            <div id="itemMain">
-                <i onclick='deleteItem(this)' class='fas fa-trash'></i>
-                                <input id="itemCheckbox" type="checkbox" class="markCompleted">                
-
-                <span contenteditable='true'> ${itemInput} </span>
-                <div id="item">
-                    <div class="row"></div>
-                </div>
-            </div>
-        </div>`);
+        $(element).siblings(".item").append(
+            `<div class="itemContainer">
+            <input id="itemCheckbox" type="checkbox" class="markCompleted">
+            <i onclick='deleteItem(this)' class='fas fa-trash'></i>
+            <span contenteditable="true"> ${itemInput} </span>
+        </div>`
+        );
+        // $(".item").append
+        // (`
+        // <div class="itemContainer">
+        //     <input id="itemCheckbox" type="checkbox" class="markCompleted">
+        //     <i onclick='deleteItem(this)' class='fas fa-trash'></i>
+        //     <span contenteditable="true"> ${itemInput} </span>
+        // </div>`);
         $(".itemInput").val("");
     }
-    $(".itemInput").focus();
-
+    // $(".itemInput").focus();
 }
-
+//add Item with Enter Key
 function itemCheck(event) {
     switch (event.which) {
         case 13:
@@ -104,91 +83,3 @@ function itemCheck(event) {
             break;
     }
 }
-
-//fadeOut is broken
-function deleteItem(element) {
-    console.log(element);
-    // $(element).fadeOut( "slow", function() {
-    $(element).parent().remove();
-    // });
-}
-
-
-// //copy/paste Mario's js
-// class List {
-//     constructor(name) {
-//         this.name = name;
-//         this.tasks = [];
-//     }
-//     addTask(task) {
-//         this.tasks.push(task);
-//     }
-//     removeTask(task) {
-//         // remove task from list
-//     }
-//     rename(name) {
-//         this.name = name;
-//     }
-// }
-//
-// class Task {
-//     constructor(text) {
-//         this.text = text;
-//         this.completed = false;
-//     }
-//     rename(text) {
-//         this.text = text;
-//     }
-//     markCompleted() {
-//         this.completed = true;
-//     }
-//     markIncomplete() {
-//         this.completed = false;
-//     }
-// }
-//
-// class UrgentTask extends Task {
-//     constructor(text, level) {
-//         super(text);
-//         this.priority = level;
-//     }
-// }
-//
-// const firstList = new List('Saturday Projects');
-// const firstTask = new Task('Wash Car');
-// const secondTask = new Task('Paint Baby Room');
-// const thirdTask = new Task('Get Oil Change');
-//
-// firstList.addTask(firstTask);
-// firstList.addTask(secondTask);
-// firstList.addTask(thirdTask);
-//
-// function markAllCompleted() {
-//     firstList.tasks.forEach(task => {
-//         task.markCompleted();
-//     });
-// }
-//
-// const currentListElement = $('#currentList');
-// currentListElement.html(`<h2>${firstList.name}</h2>`);
-// let taskHtml = '<ul>';
-// firstList.tasks.forEach((task, index) => {
-//     taskHtml = taskHtml +
-//         `<li id="task${index}">${task.text}<input type="checkbox"
-//         onclick="markCompleted(this, ${index})"></li>`;
-// });
-// taskHtml = taskHtml + '</ul>';
-//
-// currentListElement.append(taskHtml);
-//
-// function markCompleted(element, index) {
-//     if(element.checked == true) {
-//         firstList.tasks[index].markCompleted();
-//         $(`#task${index}`).css('text-decoration', 'line-through');
-//     }
-//     else {
-//         firstList.tasks[index].markIncomplete();
-//         $(`#task${index}`).css('text-decoration', 'none');
-//     }
-// }
-
