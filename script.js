@@ -5,7 +5,7 @@ function addList(event) {
         $("#list").append
             (`<div class="listContainer">
                 <div class='listMain'>
-                    <input id="listCheckbox" type="checkbox" class="markCompleted">
+                    <input id="listCheckbox" type="checkbox" class="markCompleted" onchange="addChecked(this)">
                     <i onclick = 'deleteList(this)' class='fas fa-trash-alt'></i>
                     <span contenteditable='true'> ${listInput} </span>
                 </div>
@@ -20,6 +20,14 @@ function addList(event) {
     }
     $(".listInput").focus();
 }
+
+function addChecked(element){
+    $(element).parent().toggleClass('completed');
+}
+function deleteChecked(){
+    $(".completed").remove();
+}
+
 //add List with Enter Key
 function listCheck(event) {
     switch (event.which) {
@@ -59,7 +67,7 @@ function addItem(element) {
     if (itemInput != "") {
         $(element).siblings(".item").append(
             `<div class="itemContainer">
-            <input id="itemCheckbox" type="checkbox" class="markCompleted">
+            <input id="itemCheckbox" type="checkbox" class="markCompleted" onchange="addChecked(this)">
             <i onclick='deleteItem(this)' class='fas fa-trash'></i>
             <span contenteditable="true"> ${itemInput} </span>
         </div>`
