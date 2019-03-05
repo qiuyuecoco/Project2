@@ -2,7 +2,7 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 nav{
-  //border: 1px solid #dadfea;
+  background-color: #2F7278;
   .deleteCompleted{
     background-color: #FAE2D5;
     border-radius: 16px;
@@ -18,8 +18,14 @@ nav{
 .listContainer{
   background-color: #D4ABA4;
   border-radius: 4px;
-
-}
-.listMain{
-  margin-top: 14px;
+  .listMain{
+    margin-top: 14px;
+    #listCheckbox{
+      padding: 2px;
+      margin-right: 3px;
+    }
+    i{
+      margin-left: 4px;
+    }
+  }
 }
