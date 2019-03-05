@@ -27,13 +27,14 @@
 </nav>
 
 <!--List-->
-<div class="listContainer">
-    <div id="listMain">
+<div class="container">
+    <div id="main">
         <!--<input id="listCheckbox" type="checkbox" class="markCompleted">-->
-        <input type="text" class="listInput" onkeyup="listCheck(event)"/>
         <!--<i onclick='deleteList(element)' class='fas fa-trash'></i>-->
-        <button onclick="addList(event)">Add List</button>
-
+        <div id="listDiv">
+            <input type="text" class="listInput" onkeyup="listCheck(event)"/>
+            <button onclick="addList(event)">Add List</button>
+        </div>
         <div id="list">
             <div class="row" ></div>
         </div>

@@ -19,13 +19,6 @@ function addItem(itemID, element) {
             <span contenteditable="true"> ${itemInput} </span>
         </div>`
         );
-        // $(".item").append
-        // (`
-        // <div class="itemContainer">
-        //     <input id="itemCheckbox" type="checkbox" class="markCompleted">
-        //     <i onclick='deleteItem(this)' class='fas fa-trash'></i>
-        //     <span contenteditable="true"> ${itemInput} </span>
-        // </div>`);
         $(".itemInput").val("");
     }
     // $(".itemInput").focus();
@@ -52,7 +45,7 @@ function addList() {
                 </div>
                 <div id="itemMain">
                     <input type="text" id="${inputItemID}" class="itemInput" onkeyup="itemCheck(event, ${inputItemID}, this)"/>
-                    <button onclick="addItem(${inputItemID}, this)">Add Item</button>
+                    <button onclick="addItem(${inputItemID}, this)">Add Task</button>
                     <div class="item"></div>
                 </div>
             </div>            

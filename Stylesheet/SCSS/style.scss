@@ -2,13 +2,24 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 nav{
-  border-radius: 8px;
-  border: 1px solid #dadfea;
+  //border: 1px solid #dadfea;
   .deleteCompleted{
-    background-color: aliceblue;
+    background-color: #FAE2D5;
+    border-radius: 16px;
+  }
+}
+.container {
+
+  #listDiv{
+    background-color: #6BB8B4;
+    border-radius: 4px;
   }
 }
 .listContainer{
-  background-color: tan;
+  background-color: #D4ABA4;
+  border-radius: 4px;
 
+}
+.listMain{
+  margin-top: 14px;
 }
