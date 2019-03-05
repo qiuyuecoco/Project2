@@ -4,7 +4,11 @@ body{
 nav{
   border-radius: 8px;
   border: 1px solid #dadfea;
+  .deleteCompleted{
+    background-color: aliceblue;
+  }
 }
 .listContainer{
   background-color: tan;
+
 }

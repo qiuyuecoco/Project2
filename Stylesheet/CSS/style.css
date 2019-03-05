@@ -7,3 +7,8 @@ nav {
 
 .listContainer {
   background-color: tan; }
+
+.deleteCompleted{
+  background-color: antiquewhite;
+  border-radius: 4px;
+}
