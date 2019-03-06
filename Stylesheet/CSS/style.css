@@ -1,17 +1,42 @@
 body {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  color: #18323D;
+  background-color: #FAE2D5; }
 
-nav .deleteCompleted {
-  background-color: #FAE2D5;
-  border-radius: 16px; }
+.navigation {
+  background: #2F7278;
+  width: 85%;
+  border-radius: 8px; }
+  .navigation .deleteCompleted {
+    background-color: #D4ABA4;
+    border: 1px solid #18323D;
+    border-radius: 16px; }
 
-.container #listDiv {
+.container .main .listDiv {
+  margin-top: 4px;
   background-color: #6BB8B4;
-  border-radius: 4px; }
+  border-radius: 4px;
+  height: 40px; }
+  .container .main .listDiv .listInput {
+    height: 25px;
+    margin: auto 5px; }
+  .container .main .listDiv .listButton {
+    height: 25px;
+    margin: auto 5px; }
 
 .listContainer {
   background-color: #D4ABA4;
   border-radius: 4px; }
-
-.listMain {
-  margin-top: 14px; }
+  .listContainer .listMain {
+    margin-top: 14px;
+    font-weight: bold;
+    font-size: 18px; }
+    .listContainer .listMain #listCheckbox {
+      padding: 2px;
+      margin-right: 3px; }
+  .listContainer #itemMain .taskInput .itemInput {
+    height: 25px;
+    margin: 5px 0 5px 0; }
+  .listContainer #itemMain .taskInput .taskButton {
+    height: 25px;
+    margin: auto 5px; }

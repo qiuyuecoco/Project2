@@ -4,15 +4,16 @@ function addChecked(element){
 }
 //Delete Items element with class 'completed'
 function deleteChecked(){
-    $(".completed").fadeOut(2500);
-    $(".completed").remove();
+    $(".completed").fadeOut("slow", function () {
+        $(".completed").remove();
+    });
 }
 //Add Item content into span with delete icon & checkbox
 function addItem(itemID, element) {
     let itemInput = $(`#${itemID}`).val();
     // console.log(itemInput);
     if (itemInput != "") {
-        $(element).siblings(".item").append(
+        $(element).parent().siblings(".item").append(
             `<div class="itemContainer">
             <input id="itemCheckbox" type="checkbox" class="markCompleted" onchange="addChecked(this)">
             <i onclick='deleteItem(this)' class='fas fa-trash'></i>
@@ -44,8 +45,10 @@ function addList() {
                     <span contenteditable='true'> ${listInput} </span>
                 </div>
                 <div id="itemMain">
-                    <input type="text" id="${inputItemID}" class="itemInput" onkeyup="itemCheck(event, ${inputItemID}, this)"/>
-                    <button onclick="addItem(${inputItemID}, this)">Add Task</button>
+                    <div class="taskInput d-flex justify-content-center">
+                        <input type="text" id="${inputItemID}" class="itemInput" onkeyup="itemCheck(event, ${inputItemID}, this)"/>
+                        <button class="taskButton" onclick="addItem(${inputItemID}, this)">Add Task</button>
+                    </div>
                     <div class="item"></div>
                 </div>
             </div>            

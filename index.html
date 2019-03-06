@@ -18,7 +18,7 @@
 </head>
 <body>
 <!-- Header & Logo -->
-<nav class="navbar navbar-light mx-auto d-flex justify-content-around">
+<nav id="nav" class="navigation navbar navbar-light mx-auto d-flex justify-content-around">
     <a class="navbar-brand" href="https://qiuyuecoco.github.io/Project2/">
         <i class="fas fa-pencil-alt" class="d-inline-block align-top" alt="logo"></i>
         To-doodle Wists
@@ -28,12 +28,12 @@
 
 <!--List-->
 <div class="container">
-    <div id="main" class="#">
+    <div id="main" class="main">
         <!--<input id="listCheckbox" type="checkbox" class="markCompleted">-->
         <!--<i onclick='deleteList(element)' class='fas fa-trash'></i>-->
-        <div id="listDiv" class="d-flex justify-content-center">
+        <div id="listDiv" class="listDiv d-flex justify-content-center">
             <input type="text" class="listInput" onkeyup="listCheck(event)"/>
-            <button onclick="addList(event)">Add List</button>
+            <button class="listButton" onclick="addList(event)">Add List</button>
         </div>
         <div id="list" class="#">
             <div class="row" ></div>
