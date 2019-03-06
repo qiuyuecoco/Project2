@@ -8,24 +8,27 @@ nav{
     border-radius: 16px;
   }
 }
-.container {
 
   #listDiv{
     background-color: #6BB8B4;
     border-radius: 4px;
   }
-}
-.listContainer{
+
+.listContainer {
   background-color: #D4ABA4;
   border-radius: 4px;
-  .listMain{
+
+  .listMain {
     margin-top: 14px;
-    #listCheckbox{
+
+    #listCheckbox {
       padding: 2px;
       margin-right: 3px;
     }
-    i{
-      margin-left: 4px;
-    }
+  }
+
+  .itemMain {
+    display: flex;
+    justify-content: center;
   }
 }

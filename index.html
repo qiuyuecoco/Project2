@@ -18,7 +18,7 @@
 </head>
 <body>
 <!-- Header & Logo -->
-<nav class="navbar navbar-light mx-auto">
+<nav class="navbar navbar-light mx-auto d-flex justify-content-around">
     <a class="navbar-brand" href="https://qiuyuecoco.github.io/Project2/">
         <i class="fas fa-pencil-alt" class="d-inline-block align-top" alt="logo"></i>
         To-doodle Wists
@@ -28,14 +28,14 @@
 
 <!--List-->
 <div class="container">
-    <div id="main">
+    <div id="main" class="#">
         <!--<input id="listCheckbox" type="checkbox" class="markCompleted">-->
         <!--<i onclick='deleteList(element)' class='fas fa-trash'></i>-->
-        <div id="listDiv">
+        <div id="listDiv" class="d-flex justify-content-center">
             <input type="text" class="listInput" onkeyup="listCheck(event)"/>
             <button onclick="addList(event)">Add List</button>
         </div>
-        <div id="list">
+        <div id="list" class="#">
             <div class="row" ></div>
         </div>
     </div>
@@ -55,25 +55,6 @@
         <!--</div>-->
     <!--</div>-->
 <!--</div>-->
-
-
-<!--trial of bootstrap with anchor tag & link-->
-            <!--<div id="list-example" class="list-group">-->
-                <!--<a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>-->
-                <!--<a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>-->
-                <!--<a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>-->
-                <!--<a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>-->
-            <!--</div>-->
-            <!--<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">-->
-                <!--<h4 id="list-item-1">Item 1</h4>-->
-                <!--<p>...</p>-->
-                <!--<h4 id="list-item-2">Item 2</h4>-->
-                <!--<p>...</p>-->
-                <!--<h4 id="list-item-3">Item 3</h4>-->
-                <!--<p>...</p>-->
-                <!--<h4 id="list-item-4">Item 4</h4>-->
-                <!--<p>...</p>-->
-            <!--</div>-->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
