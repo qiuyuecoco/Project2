@@ -15,6 +15,7 @@
     <!--JQUERY-->
     <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script defer src="script.js"></script>
+    <script defer src="control.js"></script>
 </head>
 <body>
 <!-- Header & Logo -->
@@ -35,26 +36,13 @@
             <input type="text" class="listInput" onkeyup="listCheck(event)"/>
             <button class="listButton" onclick="addList(event)">Add List</button>
         </div>
-        <div id="list" class="#">
-            <div class="row" ></div>
+        <div id="list" class="list">
+            <div id="listContainer" class="row" ></div>
         </div>
     </div>
 </div>
 
 
-<!--Item: populates when List is created-->
-
-<!--<div class="itemContainer">-->
-    <!--<div id="itemMain">-->
-        <!--<input id="itemCheckbox" type="checkbox" class="markCompleted">-->
-        <!--<input type="text" class="itemInput" onkeyup="itemCheck(event)"/>-->
-        <!--<i onclick='deleteItem(element)' class='fas fa-trash'></i>-->
-        <!--<button onclick="addItem()">Add Item</button>-->
-        <!--<div id="item">-->
-            <!--<div class="row"></div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
